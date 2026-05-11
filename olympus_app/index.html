@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#080808">
+  <title>Olympus</title>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- CSS: UN solo archivo que importa todo en el orden correcto -->
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+  <!-- App principal -->
+  <div id="app">
+    <div id="screen-container"></div>
+
+    <!-- Menú inferior -->
+    <nav id="bottom-nav" hidden>
+      <button class="nav-item" data-route="dashboard">
+        <i data-lucide="home"></i><span>Inicio</span>
+      </button>
+      <button class="nav-item" data-route="train">
+        <i data-lucide="dumbbell"></i><span>Entrena</span>
+      </button>
+      <button class="nav-item" data-route="progress">
+        <i data-lucide="bar-chart-2"></i><span>Progreso</span>
+      </button>
+      <button class="nav-item" data-route="challenges">
+        <i data-lucide="trophy"></i><span>Retos</span>
+      </button>
+      <button class="nav-item" data-route="profile">
+        <i data-lucide="user"></i><span>Perfil</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CHAT IA OVERLAY — aparece encima de cualquier pantalla
+       Se activa con el botón FAB (abajo derecha)
+  ═══════════════════════════════════════════════════════ -->
+  <div id="chat-overlay" class="chat-overlay hidden" style="display:none;"
+       role="dialog" aria-modal="true">
+    <div class="chat-backdrop" id="chat-backdrop"></div>
+    <div class="chat-panel" id="chat-panel">
+      <div class="chat-drag-handle"></div>
+      <!-- Header -->
+      <div class="chat-hdr">
+        <div class="chat-hdr-ava">
+          <i data-lucide="bot" style="width:20px;height:20px;color:#00f5ff;"></i>
+        </div>
+        <div class="chat-hdr-info">
+          <p class="chat-hdr-title">Asistente Olympus</p>
+          <p class="chat-hdr-sub">
+            <span class="chat-status-dot"></span>
+            <span style="color:#22c55e;">disponible</span>
+            <span style="color:#666;"> · IA activa</span>
+          </p>
+        </div>
+        <button class="chat-hdr-btn" id="chat-min-btn" title="Minimizar">
+          <i data-lucide="minus" style="width:16px;height:16px;"></i>
+        </button>
+      </div>
+      <!-- Mensajes -->
+      <div id="chat-msgs" class="chat-msgs"></div>
+      <!-- Sugerencias -->
+      <div class="chat-chips" id="chat-chips">
+        <button class="chat-chip">¿Cuál es mi rutina de hoy?</button>
+        <button class="chat-chip">Consejo para ganar músculo</button>
+        <button class="chat-chip">¿Qué comer antes?</button>
+        <button class="chat-chip">Ejercicio para espalda</button>
+      </div>
+      <!-- Input -->
+      <div class="chat-inp-row">
+        <button class="chat-mic-btn" id="chat-mic-btn">
+          <i data-lucide="mic" style="width:16px;height:16px;"></i>
+        </button>
+        <input type="text" id="chat-input" class="chat-inp"
+               placeholder="Escríbelo o usa el micrófono..."
+               autocomplete="off">
+        <button class="chat-send-btn" id="chat-send-btn">
+          <i data-lucide="send" style="width:16px;height:16px;color:#000;"></i>
+        </button>
+      </div>
+      <!-- Cerrar -->
+      <div class="chat-close-row">
+        <button class="chat-close-x" id="chat-close-btn">
+          <i data-lucide="x" style="width:18px;height:18px;color:#00f5ff;"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts — ORDEN IMPORTANTE -->
+  <script src="js/app.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/onboarding.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/workout.js"></script>
+  <script src="js/train.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/modules.js"></script>
+</body>
+</html>

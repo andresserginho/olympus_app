@@ -1,0 +1,18 @@
+/* ============================================================
+   INDEX.CSS — Carga todos los estilos en el orden correcto
+   ============================================================ */
+
+/* Fuentes */
+@import './fonts.css';
+
+/* Variables de diseño (tema Olympus) */
+@import './theme.css';
+
+/* Animaciones (de la carpeta css/) */
+@import '../css/animations.css';
+
+/* Layout, nav, chat overlay, utilidades */
+@import '../css/globals.css';
+
+/* Botones, cards, inputs, auth, onboarding */
+@import '../css/components.css';
